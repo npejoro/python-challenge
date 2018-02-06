@@ -1,6 +1,7 @@
 import os
 import csv
 
+#create file extension numbers, add to list as needed
 fileext = ['1', '2']
 
 #for loop to create file path and extract source data
@@ -47,10 +48,19 @@ for filenumber in fileext:
 
 #print summary to output file
     with open(output_dest, 'w') as writefile:
-        writefile.writelines('Financial Analysis\n')
+        writefile.writelines('Financial Analysis' + '\n')
         writefile.writelines('----------------------------------------------------------------' + '\n')
         writefile.writelines('Total Months: ' + str(totalmonths) + '\n')
         writefile.writelines('Total Revenue: $' + str(totalrev) + '\n')
         writefile.writelines('Average Revenue Change: $' + str(avgchange) + '\n')
         writefile.writelines('Greatest Increase in Revenue: ' + greatincmonth + ' $' + str(greatinc) + '\n')
         writefile.writelines('Greatest Decrease in Revenue: ' + greatdecmonth + ' $' + str(greatdec) + '\n')
+
+#print summary to terminal 
+    print('Financial Analysis')
+    print('----------------------------------------------------------------')
+    print('Total Months: ' + str(totalmonths))
+    print('Total Revenue: $' + str(totalrev))
+    print('Average Revenue Change: $' + str(avgchange))
+    print('Greatest Increase in Revenue: ' + greatincmonth + ' $' + str(greatinc))
+    print('Greatest Decrease in Revenue: ' + greatdecmonth + ' $' + str(greatdec))
