@@ -1,10 +1,11 @@
 import os
 import csv
 
-file_num = ['1', '2']
+#create file extension numbers, add to list as needed
+fileext = ['1', '2']
 
-#create file path and save as file
-for filenumber in file_num:
+#for loop to create file path
+for filenumber in fileext:
 
     file = os.path.join('raw_data', 'employee_data' + str(filenumber) + '.csv')
 
@@ -88,8 +89,7 @@ for filenumber in file_num:
     #create output files
     output_file = os.path.join('output', 'new_employee_data' + str(filenumber) + '.csv')
 
-    with open(output_file, 'w') as csvwrite:
+    with open(output_file, 'w', newline = '') as csvwrite:
         newfile = csv.writer(csvwrite, delimiter = ",")
         newfile.writerow(['Emp ID', 'First Name', 'Last Name', 'DOB', 'SSN', 'State'])
         newfile.writerows(newdata)
-
